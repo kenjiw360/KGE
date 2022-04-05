@@ -12,15 +12,15 @@ A Game Engine Built for Front End Sites!
 
 - Game Instance
   - [Create Game Instance](#1-1)
- - [Settings and Configuration](#1-2)
+  - [Settings and Configuration](#1-2)
  - Add GameObjects to Game Instance
 - GameObjects
- - Create GameObjects
- - Add Components
+  - Create GameObjects
+  - Add Components
 - Components
- - Create Components
- - Position
- - Sprite
+  - Create Components
+  - Position
+  - Sprite
 - Input
 
 ## Game Instance
