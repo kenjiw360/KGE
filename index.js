@@ -1,18 +1,19 @@
-class Input{
-	keys = {};
+const Input = {
+	keys: {},
+	run(){
+		document.addEventListener("keydown", function keydown(e) {
+			Input.keys[e.code] = true;
+		})
+		document.addEventListener("keyup", function keyup(e) {
+			Input.keys[e.code] = false;
+		})
+	},
+	isKeyDown(code){
+		return Input.keys[code] || false;
+	}
+};
 
-	constructor(game){
-		game.gameElem.addEventListener("keydown", function keydown(e) {
-			this.keys[e.code] = true;
-		})
-		game.gameElem.addEventListener("keyup", function keyup(e) {
-			this.keys[e.code] = false;
-		})
-	}
-	static isKeyDown(code){
-		return keys[code] || false;
-	}
-}
+Input.run();
 
 function createString(length) {
 	var characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890".split("");
