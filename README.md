@@ -11,7 +11,7 @@ A Game Engine Built for Front End Sites!
 ## Documentation
 
 - Game Instance
- - [Create Game Instance](#1-1)
+  - [Create Game Instance](#1-1)
  - [Settings and Configuration](#1-2)
  - Add GameObjects to Game Instance
 - GameObjects
