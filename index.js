@@ -33,9 +33,41 @@ class Game{
 	background = "rgba(255,255,255,0)";
 	fps = 60;
 
+	constructor(){
+		var div = document.createElement("div");
+		div.id = "gameView";
+		div.style.padding = 0;
+		div.style.margin = 0;
+		div.style.position = "absolute";
+		div.style.display = "block";
+		div.style.top = 0;
+		div.style.left = 0;
+		div.style.width = "100%";
+		div.style.height = "100%";
+		div.style.overflow = "visible";
+
+		this.gameElem.append(div);
+		this.gameElem.style.overflow = "hidden";
+
+		this.gameElem = div;
+	}
+
 	//Simple Settings
 	setGameElem(gameElem) {
-		this.gameElem = gameElem;
+		var div = document.createElement("div");
+		div.id = "gameView";
+		div.style.padding = 0;
+		div.style.margin = 0;
+		div.style.position = "absolute";
+		div.style.display = "block";
+		div.style.top = 0;
+		div.style.left = 0;
+		div.style.width = "100%";
+		div.style.height = "100%";
+		div.style.overflow = "visible";
+		gameElem.append(div);
+		gameElem.style.overflow = "hidden";
+		this.gameElem = div;
 	}
 
 	setBackground(background){
@@ -88,7 +120,8 @@ class Component {}
 function run(game){
 	game.gameElem.innerHTML = "";
 	game.gameElem.innerText = "";
-	game.gameElem.style.background = game.background;
+	game.gameElem.parentElement.style.background = game.background;
+
 	//Handles Start
 	Object.values(game.gameObjects).forEach(function (gameObject) {
 		gameObject.components.forEach(function (component) {

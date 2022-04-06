@@ -1,6 +1,6 @@
 class Camera extends Component{
     componentName = "camera";
-    follow;
+    followObj;
 
     constructor(options){
         super()
@@ -8,12 +8,14 @@ class Camera extends Component{
     }
 
     follow(gameObject){
-        this.follow = gameObject;
+        this.followObj = gameObject;
     }
-    Update(gameObject){
-        if(gameObject == game.camera && typeof follow == "GameObject"){
-            console.log("I am the main camera");
 
+    Update(gameObject, game){
+        if(gameObject == game.camera && this.followObj.name == "GameObject"){
+            var gbox = game.gameElem.getBoundingClientRect();
+            var box = this.followObj.sprite.img.getBoundingClientRect();
+            game.gameElem.style.transform = `translate(${-this.followObj.position.x+gbox.width/2-box.width/2}px,${-this.followObj.position.y+gbox.height/2-box.height/2}px)`;
         }
     }
 }

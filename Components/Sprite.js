@@ -33,8 +33,8 @@ class Sprite extends Component {
         var img = this.img;
         img.src = this.url;
         img.style.position = "absolute";
-        img.style.left = gameObject.position.x + "vh";
-        img.style.top = gameObject.position.y + "vh";
+        img.style.left = gameObject.position.x + "px";
+        img.style.top = gameObject.position.y + "px";
 
         var options = this.options;
 
